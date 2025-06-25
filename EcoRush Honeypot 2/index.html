@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRush - Gamified Waste Education</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">EcoRush</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#docs">Documentation</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#" class="login-btn" id="loginBtn">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="loginClose">&times;</span>
+            <div class="login-container">
+                <h2>Welcome Back</h2>
+                <p class="login-subtitle">Sign in to your Phoenix Engine account</p>
+                
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <!-- Honeypot Field (hidden from real users) -->
+                    <input type="text" id="trapField" name="trap_field" style="display:none" autocomplete="off">
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary login-submit">Sign In</button>
+                </form>
+                
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#" id="showSignupBtn">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="signupClose">&times;</span>
+            <div class="login-container">
+                <h2>Create Account</h2>
+                <p class="login-subtitle">Join the EcoRush heroes</p>
+                
+                <form class="login-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" name="password" required>
+                        <small class="password-hint">At least 8 characters with letters and numbers</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <small class="password-match" id="passwordMatch"></small>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms of Service</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary login-submit">Create Account</button>
+                </form>
+                
+                <div class="signup-link">
+                    <p>Already have an account? <a href="#" id="showLoginBtn">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content animate-fade-in">
+                <h1>EcoRush<br>Gamified Education</h1>
+                <p class="tagline">Oh no! Multiple monsters from unknown sources are scattered everywhere destroying our planet. Quick, install the game and help us save our planet!</p>
+                <div class="cta-buttons">
+                    <a href="#download" class="btn btn-primary">Download Free</a>
+                    <a href="#docs" class="btn btn-secondary">Get Started</a>
+                </div>
+                <p style="color: #8b949e; font-size: 0.9rem;">Latest: v4.2.1 • MIT Licensed • Cross-Platform</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎮</span>
+                    <h3>Game Style</h3>
+                    <p>We all know that kids love to play games. This is right thing for them.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>A New Way of Education</h3>
+                    <p>Documentaries and waste educations are slowly getting boring. Why not give it a twist?</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🌐</span>
+                    <h3>G-Rated</h3>
+                    <p>No, this game does not include brutal executions, war crimes, or nuclear bombs. Only arcade style shooting which makes it child friendly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-section" id="download">
+        <div class="download-container">
+            <h2 class="download-title">Standard Edition</h2>
+            <p class="download-subtitle">Play the basic version of the game for free.</p>
+            <div class="download-buttons">
+                <a href="#" class="btn btn-primary">🖥️ Windows</a>
+                <a href="#" class="btn btn-primary">📱 Android</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-ultimate-section" id="download">
+        <div class="download-ultimate-container">
+            <h2 class="download-title">ULTIMATE EDITION!</h2>
+            <p class="download-ultimate-subtitle">Play the full version of the game for a much better experience.</p>
+            <div class="download-buttons">
+                <a href="#" class="btn btn-primary">🖥️ Windows</a>
+                <a href="#" class="btn btn-primary">📱 Android</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="developers">
+        <h2>Meet the Developers</h2>
+        <div class="dev-wrapper">
+            <button id="prevBtn">&#10094;</button>
+            <div class="carousel-viewport">
+                <div class="developer-carousel" id="devCarousel">
+                    <div class="developer-card">
+                        <img src="kirbydev.jpg" alt="Kirby Clarke Domingo">
+                        <h3>Kirby Clarke Domingo</h3>
+                        <p>Web and Game Developer</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="kevindev.jpg" alt="Mark Kevin Aganon">
+                        <h3>Mark Kevin Aganon</h3>
+                        <p>Capstone Leader</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="francinedev.jpg" alt="Francine Eslabra">
+                        <h3>Francine Eslabra</h3>
+                        <p>Documentator</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="maxinedev.jpg" alt="Maxine Dagdag">
+                        <h3>Maxine Dagdag</h3>
+                        <p>Documentator</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="dannicadev.jpg" alt="Dannica Shine Bernardo">
+                        <h3>Dannica Shine Bernardo</h3>
+                        <p>Documentator</p>
+                    </div>
+                </div>
+            </div>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+        <div class="indicators" id="indicators"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Engine</h4>
+                <ul>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">Release Notes</a></li>
+                    <li><a href="#">System Requirements</a></li>
+                    <li><a href="#">License</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Best Practices</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Reddit</a></li>
+                    <li><a href="#">Contributing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Showcase</h4>
+                <ul>
+                    <li><a href="#">Featured Games</a></li>
+                    <li><a href="#">Asset Library</a></li>
+                    <li><a href="#">Templates</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Phoenix Engine Community. Licensed under MIT License.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(13, 17, 23, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(13, 17, 23, 0.95)';
+            }
+        });
+
+        // Animate feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
+        });
+
+        // Add interactive hover effect to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Modal Elements
+        const loginModal = document.getElementById('loginModal');
+        const signupModal = document.getElementById('signupModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginClose = document.getElementById('loginClose');
+        const signupClose = document.getElementById('signupClose');
+        const showSignupBtn = document.getElementById('showSignupBtn');
+        const showLoginBtn = document.getElementById('showLoginBtn');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+
+        // Open login modal
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal(loginModal);
+        });
+
+        // Open signup modal from login modal
+        showSignupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeModal(loginModal);
+            setTimeout(() => openModal(signupModal), 100);
+        });
+
+        // Open login modal from signup modal
+        showLoginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeModal(signupModal);
+            setTimeout(() => openModal(loginModal), 100);
+        });
+
+        // Close modals
+        loginClose.addEventListener('click', () => closeModal(loginModal));
+        signupClose.addEventListener('click', () => closeModal(signupModal));
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                closeModal(loginModal);
+            } else if (e.target === signupModal) {
+                closeModal(signupModal);
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (loginModal.style.display === 'block') {
+                    closeModal(loginModal);
+                } else if (signupModal.style.display === 'block') {
+                    closeModal(signupModal);
+                }
+            }
+        });
+
+        // Modal helper functions
+        function openModal(modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Get user IP and User Agent
+        async function getUserInfo() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return {
+                    ip: data.ip,
+                    userAgent: navigator.userAgent,
+                    timestamp: new Date().toLocaleString('en-PH', { timeZone: 'Asia/Manila' })
+                };
+            } catch (error) {
+                return {
+                    ip: 'Unknown',
+                    userAgent: navigator.userAgent,
+                    timestamp: new Date().toLocaleString('en-PH', { timeZone: 'Asia/Manila' })
+                };
+            }
+        }
+
+        // Log credentials to console (simulating file logging for demo)
+        function logCredentials(email, password, userInfo, isBotDetected = false) {
+            const logEntry = `[${userInfo.timestamp}] IP: ${userInfo.ip} | User-Agent: ${userInfo.userAgent} | Email: ${email} | Password: ${password}`;
+            const botDetection = isBotDetected ? " | BOT DETECTED (trap field filled)" : "";
+            
+            console.log("HONEYPOT LOG:", logEntry + botDetection);
+            
+            // In a real scenario, this would be sent to a server endpoint
+            // For Netlify, you could use Netlify Functions or a third-party service
+            // For demo purposes, we're just logging to console
+            
+            // You could also store in localStorage for demo purposes
+            const existingLogs = JSON.parse(localStorage.getItem('honeypotLogs') || '[]');
+            existingLogs.push({
+                timestamp: userInfo.timestamp,
+                ip: userInfo.ip,
+                userAgent: userInfo.userAgent,
+                email: email,
+                password: password,
+                botDetected: isBotDetected
+            });
+            localStorage.setItem('honeypotLogs', JSON.stringify(existingLogs));
+        }
+
+        // Login form submission - HONEYPOT VERSION
+        loginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const trapField = document.getElementById('trapField').value;
+            const remember = document.getElementById('remember').checked;
+            const submitBtn = document.querySelector('.login-submit');
+            
+            // Clear any existing messages
+            clearMessages(loginModal);
+            
+            // Get user info for logging
+            const userInfo = await getUserInfo();
+            
+            // Check if bot detected (trap field filled)
+            const isBotDetected = trapField.length > 0;
+            
+            // Log all attempts (including bot attempts)
+            logCredentials(email, password, userInfo, isBotDetected);
+            
+            // Show loading state
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Signing In...';
+            submitBtn.disabled = true;
+            
+            // Simulate processing time
+            setTimeout(() => {
+                // Accept any credentials for demo purposes
+                if (email && password) {
+                    showMessage('Login successful! Redirecting to dashboard...', 'success', loginModal);
+                    
+                    // Redirect to dashboard after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1500);
+                } else {
+                    showMessage('Please fill in all fields', 'error', loginModal);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            }, 1000);
+        });
+
+        // Signup form submission - REDIRECT TO DASHBOARD
+        signupForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('signupEmail').value.trim();
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const agreeTerms = document.getElementById('agreeTerms').checked;
+            const submitBtn = signupForm.querySelector('.login-submit');
+            
+            // Clear any existing messages
+            clearMessages(signupModal);
+            
+            // Basic validation
+            if (!firstName || !lastName || !email || !password || !confirmPassword) {
+                showMessage('Please fill in all fields', 'error', signupModal);
+                return;
+            }
+            
+            if (firstName.length < 2 || lastName.length < 2) {
+                showMessage('First name and last name must be at least 2 characters long', 'error', signupModal);
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address', 'error', signupModal);
+                return;
+            }
+            
+            if (password.length < 8) {
+                showMessage('Password must be at least 8 characters long', 'error', signupModal);
+                return;
+            }
+            
+            if (!/(?=.*[a-zA-Z])(?=.*\d)/.test(password)) {
+                showMessage('Password must contain both letters and numbers', 'error', signupModal);
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showMessage('Passwords do not match', 'error', signupModal);
+                return;
+            }
+            
+            if (!agreeTerms) {
+                showMessage('Please agree to the Terms of Service', 'error', signupModal);
+                return;
+            }
+            
+            // Show loading state
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Creating Account...';
+            submitBtn.disabled = true;
+            
+            // Simulate account creation
+            setTimeout(() => {
+                showMessage('Account created successfully! Redirecting to dashboard...', 'success', signupModal);
+                
+                // Redirect to dashboard after a short delay
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 2000);
+            }, 1000);
+        });
+
+        // Password confirmation validation
+        const signupPassword = document.getElementById('signupPassword');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const passwordMatch = document.getElementById('passwordMatch');
+
+        function updatePasswordMatch() {
+            const password = signupPassword.value;
+            const confirm = confirmPassword.value;
+            
+            if (!confirm) {
+                passwordMatch.textContent = '';
+                passwordMatch.style.color = '';
+                return;
+            }
+            
+            if (password === confirm) {
+                passwordMatch.textContent = '✓ Passwords match';
+                passwordMatch.style.color = '#40d47e';
+            } else {
+                passwordMatch.textContent = '✗ Passwords do not match';
+                passwordMatch.style.color = '#ff6b6b';
+            }
+        }
+
+        signupPassword.addEventListener('input', updatePasswordMatch);
+        confirmPassword.addEventListener('input', updatePasswordMatch);
+
+        // Email validation helper function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Add input focus effects
+        document.querySelectorAll('.form-group input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Function to show messages to user
+        function showMessage(message, type, modal) {
+            clearMessages(modal);
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `login-message ${type}`;
+            messageDiv.textContent = message;
+            
+            const loginContainer = modal.querySelector('.login-container');
+            const form = modal.querySelector('.login-form');
+            loginContainer.insertBefore(messageDiv, form);
+            
+            if (type !== 'success') {
+                setTimeout(() => {
+                    if (messageDiv.parentNode) {
+                        messageDiv.remove();
+                    }
+                }, 5000);
+            }
+        }
+
+        // Function to clear messages from a modal
+        function clearMessages(modal) {
+            const existingMessages = modal.querySelectorAll('.login-message');
+            existingMessages.forEach(message => message.remove());
+        }
+
+        // Developers carousel functionality
+        const carousel = document.getElementById('devCarousel');
+        const cards = document.querySelectorAll('.developer-card');
+        const indicatorsContainer = document.getElementById('indicators');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth;
+            carousel.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+            updateIndicators();
+        }
+
+        function updateIndicators() {
+            const dots = indicatorsContainer.querySelectorAll('span');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function createIndicators() {
+            for (let i = 0; i < cards.length; i++) {
+                const dot = document.createElement('span');
+                if (i === currentIndex) dot.classList.add('active');
+                indicatorsContainer.appendChild(dot);
+            }
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        createIndicators();
+
+        // Add CSS for message styling
+        const style = document.createElement('style');
+        style.textContent = `
+            .login-message {
+                padding: 12px;
+                margin-bottom: 15px;
+                border-radius: 4px;
+                font-size: 14px;
+                text-align: center;
+            }
+            .login-message.success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+            .login-message.error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
